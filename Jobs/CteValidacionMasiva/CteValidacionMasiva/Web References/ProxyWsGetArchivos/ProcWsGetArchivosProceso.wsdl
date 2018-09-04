@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="KbComprasPortal" xmlns:wsdlns="KbComprasPortal" name="ProcWsGetArchivosProceso" targetNamespace="KbComprasPortal" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="KbComprasPortal">
+      <xsd:complexType name="SDTCMArchivo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="SDTCMArchivo.SDTCMArchivoItem" type="wsdlns:SDTCMArchivo.SDTCMArchivoItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SDTCMArchivo.SDTCMArchivoItem">
+        <xsd:sequence>
+          <xsd:element name="CMArchivoId" type="xsd:long" />
+          <xsd:element name="CMArchivoFecha" nillable="true" type="xsd:dateTime" />
+          <xsd:element name="CMArchivoUsuario" type="xsd:string" />
+          <xsd:element name="CMArchivoTFacturas" type="xsd:long" />
+          <xsd:element name="CMArchivoStatus" type="xsd:short" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProcWsGetArchivosProceso.Execute">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProcWsGetArchivosProceso.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Sdtcmarchivo" type="wsdlns:SDTCMArchivo" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="ProcWsGetArchivosProceso.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:ProcWsGetArchivosProceso.Execute" />
+  </message>
+  <message name="ProcWsGetArchivosProceso.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:ProcWsGetArchivosProceso.ExecuteResponse" />
+  </message>
+  <portType name="ProcWsGetArchivosProcesoSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:ProcWsGetArchivosProceso.ExecuteSoapIn" />
+      <output message="wsdlns:ProcWsGetArchivosProceso.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="ProcWsGetArchivosProcesoSoapBinding" type="wsdlns:ProcWsGetArchivosProcesoSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="KbComprasPortalaction/APROCWSGETARCHIVOSPROCESO.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProcWsGetArchivosProceso">
+    <port name="ProcWsGetArchivosProcesoSoapPort" binding="wsdlns:ProcWsGetArchivosProcesoSoapBinding">
+      <soap:address location="http://proveedores.gomart.com.mx:8081/GMD200/procwsgetarchivosproceso.aspx" />
+    </port>
+  </service>
+</definitions>

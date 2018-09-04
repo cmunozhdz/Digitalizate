@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<movieeditor slideshow="true" version="3">
+  <tracks>
+    <picture filename="file:///Z:/VstudioProjects/Digitalizate/SitioInicio/Barteleu.png" duration="3.500000" index="0" rotation="0.000000" autoresizable="false">
+      <kenburns>
+        <float name="startx" value="0"/>
+        <float name="starty" value="0"/>
+        <float name="startz" value="0"/>
+        <float name="endx" value="0.016803"/>
+        <float name="endy" value="-0.006771"/>
+        <float name="endz" value="0.38296"/>
+      </kenburns>
+    </picture>
+    <transition name="med.transitions.CloseFlapLeft" duration="1.500000" index="1" autoresizable="false" manualtransition="false"/>
+    <picture filename="file:///Z:/VstudioProjects/Digitalizate/SitioInicio/Mlbm.png" duration="3.500000" index="2" rotation="0.000000" autoresizable="false">
+      <kenburns>
+        <float name="startx" value="0"/>
+        <float name="starty" value="0.172849"/>
+        <float name="startz" value="0.189601"/>
+        <float name="endx" value="0"/>
+        <float name="endy" value="-0.171517"/>
+        <float name="endz" value="0.189601"/>
+      </kenburns>
+    </picture>
+    <transition name="med.transitions.RotateLeftBottomRight" duration="1.500000" index="3" autoresizable="false" manualtransition="false"/>
+    <picture filename="file:///Z:/VstudioProjects/Digitalizate/SitioInicio/Digitalizate.png" duration="3.500000" index="4" rotation="0.000000" autoresizable="false">
+      <kenburns>
+        <float name="startx" value="0"/>
+        <float name="starty" value="0"/>
+        <float name="startz" value="0"/>
+        <float name="endx" value="0.016803"/>
+        <float name="endy" value="-0.006771"/>
+        <float name="endz" value="0.38296"/>
+      </kenburns>
+    </picture>
+  </tracks>
+  <settings>
+    <setting key="pictureduration" value="3.500000"/>
+    <setting key="transitionduration" value="1.500000"/>
+    <setting key="autolengthenabled" value="false"/>
+    <setting key="credits.music.musicallowedonstartcredits" value="true"/>
+    <setting key="credits.music.musicallowedonendcredits" value="true"/>
+    <setting key="music.fadeInOut" value="true"/>
+    <setting key="music.crossfade" value="false"/>
+    <setting key="globalfadeinout" value="false"/>
+    <setting key="kenburnseffect" value="false"/>
+    <setting key="kennburnseffecttype" value="kbet_none"/>
+    <setting key="randomplugins" count="0"/>
+  </settings>
+  <effects>
+    <setting showTextEffect="false" date="false" filename="false" dimensions="false" textPosition="tp_bottomRight" textColour="black" font="0;-16;0;0;0;400;0;0;0;0;3;2;1;34;Arial" fontFamily="74" fontStyle="90" fontWeight="90" fontUnderlined="false" pointSize="12"/>
+  </effects>
+  <defaultSubtitleFont textColour="rgb(0, 0, 0)" font="Arial" fontStyle="90" fontWeight="90" fontUnderlined="false" fontSize="12"/>
+  <musicitems/>
+  <subtitles/>
+  <display-system norm="pal" aspect-ratio="16:9"/>
+  <moviedisc-xml>
+    <infile>
+      <videotracklist duration="13.5" id="movietrack0">
+        <track duration="5" start="0" index="-100000" enabled="1">
+          <filter duration="5" src="KenBurns/transition_KenBurns.m3danim">
+            <boolean name="enableshadow" value="0"/>
+            <float name="rotation" value="0"/>
+            <string name="color" value="#000000"/>
+            <boolean name="usestaticbackground" value="0"/>
+            <uri name="first" value="file:///Z:/VstudioProjects/Digitalizate/SitioInicio/Barteleu.png"/>
+            <float name="startx" value="0"/>
+            <float name="starty" value="0"/>
+            <float name="startz" value="0"/>
+            <float name="endx" value="0.016803"/>
+            <float name="endy" value="-0.006771"/>
+            <float name="endz" value="0.38296"/>
+          </filter>
+        </track>
+        <track duration="1.5" start="3.5" index="0" enabled="1">
+          <filter duration="1.5" src="butterfly/transition_close_flap_left.m3danim"/>
+        </track>
+        <track duration="6.5" start="3.5" index="-99999" enabled="1">
+          <filter duration="6.5" src="KenBurns/transition_KenBurns.m3danim">
+            <boolean name="enableshadow" value="0"/>
+            <float name="rotation" value="0"/>
+            <string name="color" value="#000000"/>
+            <boolean name="usestaticbackground" value="0"/>
+            <uri name="first" value="file:///Z:/VstudioProjects/Digitalizate/SitioInicio/Mlbm.png"/>
+            <float name="startx" value="0"/>
+            <float name="starty" value="0.172849"/>
+            <float name="startz" value="0.189601"/>
+            <float name="endx" value="0"/>
+            <float name="endy" value="-0.171517"/>
+            <float name="endz" value="0.189601"/>
+          </filter>
+        </track>
+        <track duration="1.5" start="8.5" index="0" enabled="1">
+          <filter duration="1.5" src="fall/transition_fall.m3danim">
+            <float name="factorX" value="1"/>
+            <float name="factorY" value="-1"/>
+          </filter>
+        </track>
+        <track duration="5" start="8.5" index="-99998" enabled="1">
+          <filter duration="5" src="KenBurns/transition_KenBurns.m3danim">
+            <boolean name="enableshadow" value="0"/>
+            <float name="rotation" value="0"/>
+            <string name="color" value="#000000"/>
+            <boolean name="usestaticbackground" value="0"/>
+            <uri name="first" value="file:///Z:/VstudioProjects/Digitalizate/SitioInicio/Digitalizate.png"/>
+            <float name="startx" value="0"/>
+            <float name="starty" value="0"/>
+            <float name="startz" value="0"/>
+            <float name="endx" value="0.016803"/>
+            <float name="endy" value="-0.006771"/>
+            <float name="endz" value="0.38296"/>
+          </filter>
+        </track>
+      </videotracklist>
+      <audiotracklist duration="13.5" id="audiotrack0">
+        <track duration="14.5" start="-1" index="-100000000" enabled="1">
+          <audio duration="0.1" starttime="0" volumefactor="1" src="silent"/>
+        </track>
+      </audiotracklist>
+    </infile>
+  </moviedisc-xml>
+  <title default="" name=""/>
+</movieeditor>

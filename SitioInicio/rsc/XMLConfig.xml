@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Digitalizate>
+  <!--Configura la conexion a grupo polak -->
+  <Conexiones>
+    <Conexion IdKey="digitalizate.polakgrupo.com" Destino="PRD/PRV/home.aspx" Titulo="DigITalizate Grupo Polak" Imagen="images/Logos/GrupoPolakDigitalizate.gif" ></Conexion>
+    <Conexion IdKey="digitalizate.serviciosmlbm.com" Destino="PRD/PRVMLBM/home.aspx" Titulo="DigITalizate Servicios Administrativos" Imagen="images/Logos/Digitalizate.gif" ></Conexion>
+    
+    <Conexion IdKey="localhost" Destino="PRD/PRVMLBM/home.aspx" Titulo="DigITalizate Grupo Polak"
+      Imagen="images/Logos/GrupoPolakDigitalizate.gif"
+    </Conexion> 
+    
+    
+  </Conexiones>
+</Digitalizate>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="KbComprasPortal" xmlns:wsdlns="KbComprasPortal" name="ProcWSValidaCDFIs" targetNamespace="KbComprasPortal" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="KbComprasPortal">
+      <xsd:element name="ProcWSValidaCDFIs.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Fechainicio" type="xsd:dateTime" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Fechafin" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProcWSValidaCDFIs.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Fechainicio" type="xsd:dateTime" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Fechafin" type="xsd:dateTime" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Retstatus" type="xsd:boolean" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Msgerror" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="ProcWSValidaCDFIs.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:ProcWSValidaCDFIs.Execute" />
+  </message>
+  <message name="ProcWSValidaCDFIs.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:ProcWSValidaCDFIs.ExecuteResponse" />
+  </message>
+  <portType name="ProcWSValidaCDFIsSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:ProcWSValidaCDFIs.ExecuteSoapIn" />
+      <output message="wsdlns:ProcWSValidaCDFIs.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="ProcWSValidaCDFIsSoapBinding" type="wsdlns:ProcWSValidaCDFIsSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="KbComprasPortalaction/APROCWSVALIDACDFIS.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProcWSValidaCDFIs">
+    <port name="ProcWSValidaCDFIsSoapPort" binding="wsdlns:ProcWSValidaCDFIsSoapBinding">
+      <soap:address location="http://proveedores.gomart.com.mx:8081/GMD150/procwsvalidacdfis.aspx" />
+    </port>
+  </service>
+</definitions>

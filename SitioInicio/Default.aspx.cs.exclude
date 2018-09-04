@@ -1,0 +1,113 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+
+public partial class _Default : System.Web.UI.Page
+{
+   
+
+    protected void Page_Init(object sender, EventArgs e) {
+        string strHost = Request.Url.Host;
+        string strTarget;
+
+        if (strHost.ToLower().Contains("polakgrupo.com"))
+        {
+            this.Page.Title = "Digitalizate Grupo Polak";         
+            PageHeader.Text = string.Format("DigITalizate {0} ", "Grupo Polak");
+            strTarget = "PRD/PRV/home.aspx";
+        }
+        else
+        {
+            if (strHost.ToLower().Contains("serviciosmlbm.com"))
+            {
+                this.Page.Title = "DigITalizate MLBM Servicios";
+                PageHeader.Text = string.Format("DigITalizate {0} ", "MLBM");
+                strTarget = "PRD/PRVMLBM/home.aspx";
+            }
+            else {
+                    PageHeader.Text = string.Format("DigITalizate {0} ", "SIN IDENTIFICAR");
+                    this.Page.Title = PageHeader.Text;
+                strTarget = "#";
+            }
+        }
+
+        if (strTarget.Equals("#") == false) {
+            //Agrega el rediccionamiento
+            BtnRedirecciona.PostBackUrl = strTarget;
+            HtmlMeta keywords = new HtmlMeta();
+            keywords.HttpEquiv = "refresh";
+            keywords.Content = string.Format("2;URL='{0}'", strTarget);
+            this.Page.Header.Controls.Add(keywords);
+
+
+
+        }
+        else
+        {
+            //No se ha encontrado el redireccionamiento
+            Response.Write("<div class=\"alert alert-danger\">");
+            Response.Write("<strong>Error!</strong> No se ha encontrado redirecionamiento valido");
+            Response.Write("</div>");
+
+        }
+
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+    }
+
+    protected void Redirect(object sender,EventArgs e)
+    {
+        
+        string strHost = Request.Url.Host ;
+        string strTarget;
+        //UrlRedirect.Text = string.Format("Lo estamos conetando al sitio ... dar clik aqui si no sucede automáticamente");
+        if (strHost.Contains("polakgrupo.com")) {
+            strTarget= "./DEV/PRV/home.aspx";
+          //  Titulo.Text = "Bienvenido Usuario de Grupo Polak";
+
+
+
+
+        }
+        else {
+            
+            if (strHost.Contains("serviciosmlbm.com"))
+            {
+                strTarget = "./DEVMLBM/PRV/home.aspx";
+                //Titulo.Text = "Bienvenido Usuario de MLBM";
+            }
+            else {
+                strTarget = "#";
+               // UrlRedirect.Text = string.Format("No existe redireccionamiento para {0}", strHost);
+                
+            }
+
+        }
+
+        //UrlRedirect.PostBackUrl = strTarget;
+        if ( (string.Equals(strTarget,"#")) == false  ) {
+            Response.Redirect(strTarget);
+        }
+        
+
+
+
+
+
+        //Response.Buffer;
+
+
+
+
+
+
+    }
+
+}

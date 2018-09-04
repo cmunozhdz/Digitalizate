@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="CteValidacionMasiva_ProxyWsGetArchivos_ProcWsGetArchivosProceso" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://proveedores.gomart.com.mx:8081/GMD200/procwsgetarchivosproceso.aspx</Value>
+    </Setting>
+    <Setting Name="CteValidacionMasiva_ProxyWSGetFacturasCM_ProcWSGetFacturasCM" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://proveedores.gomart.com.mx:8081/GMD200/procwsgetfacturascm.aspx</Value>
+    </Setting>
+    <Setting Name="MAXTHREADS" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="SLEEPSEGUNDOS" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="UsarThreads" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SegundosTimeOutWs" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">7200</Value>
+    </Setting>
+    <Setting Name="CteValidacionMasiva_ProxyWSUpdStatusCM_ProcWSUpdStatusCM" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://proveedores.gomart.com.mx:8081/GMD200/procwsupdstatuscm.aspx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

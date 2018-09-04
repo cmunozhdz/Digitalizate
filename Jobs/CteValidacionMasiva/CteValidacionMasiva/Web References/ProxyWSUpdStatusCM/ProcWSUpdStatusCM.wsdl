@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="KbComprasPortal" xmlns:wsdlns="KbComprasPortal" name="ProcWSUpdStatusCM" targetNamespace="KbComprasPortal" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="KbComprasPortal">
+      <xsd:element name="ProcWSUpdStatusCM.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Cnarchivoid" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProcWSUpdStatusCM.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Cnarchivoid" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="ProcWSUpdStatusCM.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:ProcWSUpdStatusCM.Execute" />
+  </message>
+  <message name="ProcWSUpdStatusCM.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:ProcWSUpdStatusCM.ExecuteResponse" />
+  </message>
+  <portType name="ProcWSUpdStatusCMSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:ProcWSUpdStatusCM.ExecuteSoapIn" />
+      <output message="wsdlns:ProcWSUpdStatusCM.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="ProcWSUpdStatusCMSoapBinding" type="wsdlns:ProcWSUpdStatusCMSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="KbComprasPortalaction/APROCWSUPDSTATUSCM.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProcWSUpdStatusCM">
+    <port name="ProcWSUpdStatusCMSoapPort" binding="wsdlns:ProcWSUpdStatusCMSoapBinding">
+      <soap:address location="http://proveedores.gomart.com.mx:8081/GMD200/procwsupdstatuscm.aspx" />
+    </port>
+  </service>
+</definitions>

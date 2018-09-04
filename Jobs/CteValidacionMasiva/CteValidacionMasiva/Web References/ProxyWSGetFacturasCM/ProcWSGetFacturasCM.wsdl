@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="KbComprasPortal" xmlns:wsdlns="KbComprasPortal" name="ProcWSGetFacturasCM" targetNamespace="KbComprasPortal" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="KbComprasPortal">
+      <xsd:element name="ProcWSGetFacturasCM.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Filtrocmarchivoid" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ProcWSGetFacturasCM.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Filtrocmarchivoid" type="xsd:long" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="ProcWSGetFacturasCM.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:ProcWSGetFacturasCM.Execute" />
+  </message>
+  <message name="ProcWSGetFacturasCM.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:ProcWSGetFacturasCM.ExecuteResponse" />
+  </message>
+  <portType name="ProcWSGetFacturasCMSoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:ProcWSGetFacturasCM.ExecuteSoapIn" />
+      <output message="wsdlns:ProcWSGetFacturasCM.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="ProcWSGetFacturasCMSoapBinding" type="wsdlns:ProcWSGetFacturasCMSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="KbComprasPortalaction/APROCWSGETFACTURASCM.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProcWSGetFacturasCM">
+    <port name="ProcWSGetFacturasCMSoapPort" binding="wsdlns:ProcWSGetFacturasCMSoapBinding">
+      <soap:address location="http://proveedores.gomart.com.mx:8081/GMD200/procwsgetfacturascm.aspx" />
+    </port>
+  </service>
+</definitions>

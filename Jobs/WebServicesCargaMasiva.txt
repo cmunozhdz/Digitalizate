@@ -1,0 +1,4 @@
+http://proveedores.gomart.com.mx:8081/gmd200/ProcWsGetArchivosProceso.aspx?wsdl //Obtiene la lista de documentos a procesar
+http://proveedores.gomart.com.mx:8081/gmd200/ProcWSGetFacturasCM.aspx?wsdl //Ejecuta la carga masiva
+http://proveedores.gomart.com.mx:8081/gmd200/ProcWSUpdStatusCM.aspx?wsdl //Actuliza el estatus al final del proceso
+
